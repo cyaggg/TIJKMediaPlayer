@@ -16,7 +16,7 @@ Pod::Spec.new do |spec|
   #
 
   spec.name         = "TIJKMediaPlayer"
-  spec.version      = "0.8.14"
+  spec.version      = "0.8.15"
   spec.summary      = "ijkplayer iOS video player SDK"
 
   spec.author       = { "cnwangxiao" => "wangxiao@turingvideo.net" }
@@ -78,7 +78,7 @@ Pod::Spec.new do |spec|
   #  Supports git, hg, bzr, svn and HTTP.
   #
   
-  spec.source = { :http => "https://github.com/turingvideo/TIJKMediaPlayer/releases/download/0.8.14/IJKMediaPlayer.tar.gz" }
+  spec.source = { :http => "https://github.com/turingvideo/TIJKMediaPlayer/releases/download/0.8.15/IJKMediaPlayer.tar.gz" }
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   #
@@ -117,7 +117,7 @@ Pod::Spec.new do |spec|
   spec.requires_arc = true
 
   spec.prepare_command = <<-CMD
-    tar -zxvf ./IJKMediaPlayer.tar.gz
+    tar -xvf ./IJKMediaPlayer.tar.xz
   CMD
 
   # spec.library   = "iconv"
