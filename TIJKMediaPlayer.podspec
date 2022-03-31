@@ -78,7 +78,7 @@ Pod::Spec.new do |spec|
   #  Supports git, hg, bzr, svn and HTTP.
   #
   
-  spec.source = { :git => "https://github.com/turingvideo/TIJKMediaPlayer.git", :tag => "#{spec.version}" }
+  spec.source = { :http => "https://github.com/turingvideo/TIJKMediaPlayer/blob/master/IJKMediaPlayer.tar.gz" }
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   #
@@ -116,9 +116,9 @@ Pod::Spec.new do |spec|
 
   spec.requires_arc = true
 
-  # spec.prepare_command = <<-CMD
-  #   tar -xvf ./IJKMediaPlayer.tar.xz
-  # CMD
+  spec.prepare_command = <<-CMD
+    tar -xvf ./IJKMediaPlayer.tar.xz
+  CMD
 
   # spec.library   = "iconv"
   # spec.libraries = "iconv", "xml2"
