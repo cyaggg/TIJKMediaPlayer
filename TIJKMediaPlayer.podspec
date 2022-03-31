@@ -82,7 +82,7 @@ Pod::Spec.new do |spec|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  spec.source       = { :http => "https://github.com/turingvideo/TIJKMediaPlayer/blob/master/IJKMediaPlayer.framework" }
+  spec.source       = { :http => "https://github.com/turingvideo/TIJKMediaPlayer/blob/master/IJKMediaPlayer.tar.gz" }
 
 
   spec.vendored_frameworks = 'IJKMediaPlayer.framework'
