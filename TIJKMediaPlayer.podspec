@@ -117,7 +117,7 @@ Pod::Spec.new do |spec|
   spec.requires_arc = true
 
   spec.prepare_command = <<-CMD
-    sh cat.sh
+    tar -xvf ./IJKMediaPlayer.tar.xz
   CMD
 
   # spec.library   = "iconv"
