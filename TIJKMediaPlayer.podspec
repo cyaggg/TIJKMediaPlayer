@@ -82,13 +82,17 @@ Pod::Spec.new do |spec|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  spec.source       = { :git => "https://github.com/turingvideo/TIJKMediaPlayer.git", :tag => "#{spec.version}" }
+  spec.source       = { :http => "https://github.com/turingvideo/TIJKMediaPlayer/blob/master/IJKMediaPlayer.tar.gz" }
 
 
   spec.vendored_frameworks = 'IJKMediaPlayer.framework'
   spec.frameworks  = "AudioToolbox", "AVFoundation", "CoreGraphics", "CoreMedia", "CoreVideo", "MobileCoreServices", "OpenGLES", "QuartzCore", "VideoToolbox", "Foundation", "UIKit", "MediaPlayer"
   spec.libraries   = "bz2", "z", "stdc++"
   spec.requires_arc = true
+
+  spec.prepare_command = <<-CMD
+    tar -zxvf ./IJKMediaPlayer.tar.gz
+  CMD
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
