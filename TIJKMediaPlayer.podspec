@@ -16,7 +16,7 @@ Pod::Spec.new do |spec|
   #
 
   spec.name         = "TIJKMediaPlayer"
-  spec.version      = "0.8.18"
+  spec.version      = "0.8.19"
   spec.summary      = "ijkplayer iOS video player SDK"
 
   spec.author       = { "cnwangxiao" => "wangxiao@turingvideo.net" }
@@ -117,7 +117,7 @@ Pod::Spec.new do |spec|
   spec.requires_arc = true
 
   spec.prepare_command = <<-CMD
-    tar -xzvf ./IJKMediaPlayer.tar.gz
+    tar -xvf ./IJKMediaPlayer.tar.xz
   CMD
 
   # spec.library   = "iconv"
