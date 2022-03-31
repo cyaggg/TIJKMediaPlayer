@@ -16,7 +16,7 @@ Pod::Spec.new do |spec|
   #
 
   spec.name         = "TIJKMediaPlayer"
-  spec.version      = "0.8.13"
+  spec.version      = "0.8.2"
   spec.summary      = "ijkplayer iOS video player SDK"
 
   spec.author       = { "cnwangxiao" => "wangxiao@turingvideo.net" }
