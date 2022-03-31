@@ -16,7 +16,7 @@ Pod::Spec.new do |spec|
   #
 
   spec.name         = "TIJKMediaPlayer"
-  spec.version      = "0.8.0"
+  spec.version      = "0.8.1"
   spec.summary      = "ijkplayer iOS video player SDK"
 
   # This description is used to generate tags and improve search results.
