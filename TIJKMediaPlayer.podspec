@@ -1,5 +1,5 @@
 #
-#  Be sure to run `pod spec lint fijkplayer.podspec' to ensure this is a
+#  Be sure to run `pod spec lint MyLib.podspec' to ensure this is a
 #  valid spec and to remove all comments including this before submitting the spec.
 #
 #  To learn more about Podspec attributes see https://guides.cocoapods.org/syntax/podspec.html
@@ -16,9 +16,10 @@ Pod::Spec.new do |spec|
   #
 
   spec.name         = "TIJKMediaPlayer"
-  spec.version      = "0.8.5"
+  spec.version      = "0.8.10"
   spec.summary      = "ijkplayer iOS video player SDK"
 
+  spec.author       = { "cnwangxiao" => "wangxiao@turingvideo.net" }
   # This description is used to generate tags and improve search results.
   #   * Think: What does it do? Why did you write it? What is the focus?
   #   * Try to keep it short, snappy and to the point.
@@ -26,8 +27,8 @@ Pod::Spec.new do |spec|
   #   * Finally, don't worry about the indent, CocoaPods strips it!
   spec.description  = "iOS video player based on FFmpeg n4.4, with VideoToolbox support."
 
-  spec.homepage     = "http://github.com/turingvideo/TIJKMediaPlayer"
-  # spec.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
+
+  spec.homepage     = "https://turingvideo.com"
 
 
   # ―――  Spec License  ――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -51,10 +52,6 @@ Pod::Spec.new do |spec|
   #  profile URL.
   #
 
-  spec.author             = { "cnwangxiao" => "67683867+cnwangxiao@users.noreply.github.com" }
-  # Or just: spec.author    = "cnwangxiao"
-  # spec.authors            = { "cnwangxiao" => "67683867+cnwangxiao@users.noreply.github.com" }
-  # spec.social_media_url   = "https://twitter.com/cnwangxiao"
 
   # ――― Platform Specifics ――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   #
@@ -63,11 +60,10 @@ Pod::Spec.new do |spec|
   #
 
   spec.platform     = :ios
-  spec.platform     = :ios, "10.0"
+  spec.ios.deployment_target = '10.0'
 
   spec.xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
   spec.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
-
 
   #  When using multiple platforms
   # spec.ios.deployment_target = "5.0"
@@ -81,18 +77,8 @@ Pod::Spec.new do |spec|
   #  Specify the location from where the source should be retrieved.
   #  Supports git, hg, bzr, svn and HTTP.
   #
-
-  spec.source       = { :http => "https://github.com/turingvideo/TIJKMediaPlayer/blob/master/IJKMediaPlayer.tar.gz" }
-
-
-  spec.vendored_frameworks = 'IJKMediaPlayer.framework'
-  spec.frameworks  = "AudioToolbox", "AVFoundation", "CoreGraphics", "CoreMedia", "CoreVideo", "MobileCoreServices", "OpenGLES", "QuartzCore", "VideoToolbox", "Foundation", "UIKit", "MediaPlayer"
-  spec.libraries   = "bz2", "z", "stdc++"
-  spec.requires_arc = true
-
-  spec.prepare_command = <<-CMD
-    tar -xvf ./IJKMediaPlayer.tar.gz
-  CMD
+  
+  spec.source = { :http => "https://github.com/turingvideo/TIJKMediaPlayer/blob/master/IJKMediaPlayer.tar.gz" }
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   #
@@ -102,10 +88,8 @@ Pod::Spec.new do |spec|
   #  Not including the public_header_files will make all headers public.
   #
 
-  # spec.source_files  = "Classes", "Classes/**/*.{h,m}"
-  # spec.exclude_files = "Classes/Exclude"
-
-  # spec.public_header_files = "Classes/**/*.h"
+  spec.vendored_frameworks = 'IJKMediaPlayer.framework'
+  #spec.public_header_files = "IJKPlayer.framework/Headers/*.h"
 
 
   # ――― Resources ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -127,9 +111,14 @@ Pod::Spec.new do |spec|
   #  Link your library with frameworks, or libraries. Libraries do not include
   #  the lib prefix of their name.
   #
+  spec.frameworks  = "AudioToolbox", "AVFoundation", "CoreGraphics", "CoreMedia", "CoreVideo", "MobileCoreServices", "OpenGLES", "QuartzCore", "VideoToolbox", "Foundation", "UIKit", "MediaPlayer"
+  spec.libraries   = "bz2", "z", "stdc++"
 
-  # spec.framework  = "SomeFramework"
-  # spec.frameworks = "SomeFramework", "AnotherFramework"
+  spec.requires_arc = true
+
+  spec.prepare_command = <<-CMD
+    tar -xvf ./IJKMediaPlayer.tar.xz
+  CMD
 
   # spec.library   = "iconv"
   # spec.libraries = "iconv", "xml2"
@@ -141,7 +130,6 @@ Pod::Spec.new do |spec|
   #  where they will only apply to your library. If you depend on other Podspecs
   #  you can include multiple dependencies to ensure it works.
 
-  # spec.requires_arc = true
 
   # spec.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
   # spec.dependency "JSONKit", "~> 1.4"
