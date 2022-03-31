@@ -91,7 +91,7 @@ Pod::Spec.new do |spec|
   spec.requires_arc = true
 
   spec.prepare_command = <<-CMD
-    tar -zxvf ./IJKMediaPlayer.tar.gz
+    tar -xvf ./IJKMediaPlayer.tar.gz
   CMD
 
 
