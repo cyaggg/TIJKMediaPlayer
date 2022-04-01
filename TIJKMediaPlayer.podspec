@@ -42,6 +42,9 @@ Pod::Spec.new do |spec|
 
   spec.license      = { :type => "MIT", :file => "LICENSE" }
 
+  spec.xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
+  spec.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
+
 
   # ――― Author Metadata  ――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   #
@@ -80,7 +83,7 @@ Pod::Spec.new do |spec|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  spec.source = { :http => "https://github.com/turingvideo/TIJKMediaPlayer/blob/master/IJKMediaPlayer.tar.xz" }
+  spec.source = { :http => "https://github.com/befovy/ijkplayer/releases/download/0.8.3/IJKMediaPlayer.tar.gz" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
