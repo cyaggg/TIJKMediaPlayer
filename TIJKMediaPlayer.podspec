@@ -1,5 +1,5 @@
 #
-#  Be sure to run `pod spec lint MyLib.podspec' to ensure this is a
+#  Be sure to run `pod spec lint BIJKPlayerFork.podspec' to ensure this is a
 #  valid spec and to remove all comments including this before submitting the spec.
 #
 #  To learn more about Podspec attributes see https://guides.cocoapods.org/syntax/podspec.html
@@ -17,18 +17,18 @@ Pod::Spec.new do |spec|
 
   spec.name         = "TIJKMediaPlayer"
   spec.version      = "0.8.3"
-  spec.summary      = "ijkplayer iOS video player SDK"
+  spec.summary      = "A short description of TIJKMediaPlayer."
 
-  spec.author       = { "cnwangxiao" => "wangxiao@turingvideo.net" }
   # This description is used to generate tags and improve search results.
   #   * Think: What does it do? Why did you write it? What is the focus?
   #   * Try to keep it short, snappy and to the point.
   #   * Write the description between the DESC delimiters below.
   #   * Finally, don't worry about the indent, CocoaPods strips it!
-  spec.description  = "iOS video player based on FFmpeg n4.4, with VideoToolbox support."
+  spec.description  = <<-DESC
+                   DESC
 
-
-  spec.homepage     = "https://turingvideo.com"
+  spec.homepage     = "https://github.com/befovy/ijkplayer"
+  # spec.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
 
 
   # ―――  Spec License  ――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -38,7 +38,7 @@ Pod::Spec.new do |spec|
   #  Popular ones are 'MIT', 'BSD' and 'Apache License, Version 2.0'.
   #
 
-  spec.license      = { :type => "GNU Lesser General Public License v3.0", :file => "LICENSE" }
+  spec.license      = "MIT (example)"
   # spec.license      = { :type => "MIT", :file => "FILE_LICENSE" }
 
 
@@ -52,6 +52,10 @@ Pod::Spec.new do |spec|
   #  profile URL.
   #
 
+  spec.author             = { "cnwangxiao" => "wangxiao@turingvideo.net" }
+  # Or just: spec.author    = "random"
+  # spec.authors            = { "random" => "283739569@qq.com" }
+  # spec.social_media_url   = "https://twitter.com/random"
 
   # ――― Platform Specifics ――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   #
@@ -60,10 +64,7 @@ Pod::Spec.new do |spec|
   #
 
   spec.platform     = :ios
-  spec.ios.deployment_target = '10.0'
-
-  spec.xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
-  spec.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
+  spec.ios.deployment_target = '9.0'
 
   #  When using multiple platforms
   # spec.ios.deployment_target = "5.0"
@@ -77,8 +78,9 @@ Pod::Spec.new do |spec|
   #  Specify the location from where the source should be retrieved.
   #  Supports git, hg, bzr, svn and HTTP.
   #
-  
+
   spec.source = { :http => "https://github.com/turingvideo/TIJKMediaPlayer/blob/master/IJKMediaPlayer.tar.gz" }
+
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   #
@@ -89,7 +91,9 @@ Pod::Spec.new do |spec|
   #
 
   spec.vendored_frameworks = 'IJKMediaPlayer.framework'
-  #spec.public_header_files = "IJKPlayer.framework/Headers/*.h"
+
+
+  # spec.public_header_files = "Classes/**/*.h"
 
 
   # ――― Resources ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -111,6 +115,7 @@ Pod::Spec.new do |spec|
   #  Link your library with frameworks, or libraries. Libraries do not include
   #  the lib prefix of their name.
   #
+
   spec.frameworks  = "AudioToolbox", "AVFoundation", "CoreGraphics", "CoreMedia", "CoreVideo", "MobileCoreServices", "OpenGLES", "QuartzCore", "VideoToolbox", "Foundation", "UIKit", "MediaPlayer"
   spec.libraries   = "bz2", "z", "stdc++"
 
@@ -130,6 +135,7 @@ Pod::Spec.new do |spec|
   #  where they will only apply to your library. If you depend on other Podspecs
   #  you can include multiple dependencies to ensure it works.
 
+  # spec.requires_arc = true
 
   # spec.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
   # spec.dependency "JSONKit", "~> 1.4"
